@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title>Contact - London Neural Tech</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800 text-white">
+  <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-xl font-bold text-gradient">London Neural Tech</a>
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="solutions.html" class="hover:text-blue-400 transition-colors">Solutions</a>
+      <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
+      <a href="contact.html" class="text-blue-400 transition-colors">Contact</a>
+      <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors">Get Started</a>
+    </nav>
+    <button class="md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 fade-in">
+    <section class="text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gradient">Get in Touch</h1>
+      <p class="mb-10">Have a question or ready to get started? Contact us today.</p>
+    </section>
+
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800 bg-opacity-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="card bg-gray-800 p-8 rounded-2xl border border-gray-700">
+          <form>
+            <div class="mb-6">
+              <label for="name" class="block mb-2 text-sm font-medium">Name</label>
+              <input type="text" id="name" class="bg-gray-700 border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="John Doe" required>
+            </div>
+            <div class="mb-6">
+              <label for="email" class="block mb-2 text-sm font-medium">Email</label>
+              <input type="email" id="email" class="bg-gray-700 border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@company.com" required>
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block mb-2 text-sm font-medium">Message</label>
+              <textarea id="message" rows="4" class="bg-gray-700 border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-7xl mx-auto text-center text-gray-400 py-4">
+    &copy; 2024 London Neural Tech. All rights reserved.
+  </footer>
+</body>
+</html>

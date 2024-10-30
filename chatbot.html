@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Neural Tech - Innovative IT Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Existing CSS styles */
+
+        /* Chatbot styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 400px;
+            max-width: 90vw;
+            background-color: #1e293b;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            z-index: 100;
+        }
+
+        .chatbot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0f172a;
+            padding: 1rem;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+
+        .chatbot-body {
+            padding: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .chatbot-message {
+            margin-bottom: 0.5rem;
+        }
+
+        .chatbot-message.user {
+            text-align: right;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 0.5rem 1rem;
+            border-top: 1px solid #4b5563;
+        }
+
+        .chatbot-input input {
+            flex-grow: 1;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: #e5e7eb;
+        }
+
+        .chatbot-input button {
+            background-color: #60a5fa;
+            color: #1e293b;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gradient text-white min-h-screen">
+    <!-- Existing HTML structure -->
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h3 class="text-lg font-medium">AI Chatbot</h3>
+            <button id="chatbot-close" class="text-gray-400 hover:text-gray-300 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="chatbot-body" id="chatbot-body">
+            <!-- Chatbot messages will be added here -->
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type your message..." />
+            <button id="chatbot-send">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Existing JavaScript code
+
+        // Chatbot functionality
+        const chatbotBody = document.getElementById('chatbot-body');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const chatbotSendButton = document.getElementById('chatbot-send');
+        const chatbotCloseButton = document.getElementById('chatbot-close');
+
+        // Sample chatbot responses
+        const chatbotResponses = [
+            "Hello! How can I assist you today?",
+            "I'm afraid I don't have a detailed answer for that. Let me know if there's anything else I can help with.",
+            "Great question! Let me think about that for a moment...",
+            "I don't have a specific recommendation, but I'd be happy to discuss your needs further.",
+            "Unfortunately, I don't have enough information to provide a detailed response. Could you please provide more details?"
+        ];
+
+        chatbotSendButton.addEventListener('click', () => {
+            const userMessage = chatbotInput.value.trim();
+            if (userMessage) {
+                addChatbotMessage('user', userMessage);
+                chatbotInput.value = '';
+                setTimeout(() => {
+                    const randomResponse = chatbotResponses[Math.floor(Math.random() * chatbotResponses.length)];
+                    addChatbotMessage('bot', randomResponse);
+                }, 1000);
+            }
+        });
+
+        chatbotCloseButton.addEventListener('click', () => {
+            document.querySelector('.chatbot-container').style.display = 'none';
+        });
+
+        function addChatbotMessage(sender, message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chatbot-message', sender);
+            messageElement.textContent = message;
+            chatbotBody.appendChild(messageElement);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        }
+    </script>
+</body>
+</html>
